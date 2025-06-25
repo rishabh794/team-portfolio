@@ -1,0 +1,17 @@
+name: HTML Checker
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  validate-html:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run HTMLHint
+        uses: mikeal/htmlhint-action@v1.0.2
